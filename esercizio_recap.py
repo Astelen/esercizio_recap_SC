@@ -46,6 +46,9 @@ df.head()
 df.describe()
 df.info()
 
+
+
+##Esercizio punto 3
 #Estraggo anno e mese
 df['Anno'] = pd.DatetimeIndex(df['Data']).year
 df['Mese'] = pd.DatetimeIndex(df['Data']).month
@@ -55,3 +58,9 @@ df.info()
 visitatori_mean = df.groupby('Mese')['Visitatori'].mean()
 visitatori_mean
 
+#Calcolo dev. st.
+visitatori_std = df.groupby('Mese')['Visitatori'].std()
+visitatori_std
+
+#Conteggio di tutti i valori per visualizzare valore piu' frequente, valore meno frequente
+df['Patologia'].value_counts()
