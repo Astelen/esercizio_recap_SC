@@ -1,3 +1,5 @@
+##Esercizio slide 324, punto 1
+
 import numpy as np
 import pandas as pd
 from numpy import sqrt
@@ -21,4 +23,7 @@ dati_con_trend
 #Molti dati risultano negativi, quindi aggiungo il clip per segnare un valore minimo oltre il quale non andare
 dati_con_trend = np.clip(dati_con_trend, a_min=300, a_max=None)
 dati_con_trend
+
+
+##Esercizio punto 2
 
