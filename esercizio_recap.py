@@ -27,3 +27,31 @@ dati_con_trend
 
 ##Esercizio punto 2
 
+#Creo range di date
+date_range = pd.date_range(start='2024-01-01', periods=giorni, freq='D')
+date_range
+
+# #Creo colonna con patologia casuale
+patologia = ['osteoporosi', 'infarto', 'danno neurologico']
+colonna_patologie = np.random.choice(patologia, giorni, replace=True)
+colonna_patologie
+
+#Creazione Database
+df = pd.DataFrame ({
+    'Data': date_range,
+    'Visitatori': dati_con_trend,
+    'Patologia': colonna_patologie
+                    })
+df.head()
+df.describe()
+df.info()
+
+#Estraggo anno e mese
+df['Anno'] = pd.DatetimeIndex(df['Data']).year
+df['Mese'] = pd.DatetimeIndex(df['Data']).month
+df.info()
+
+#Calcolo media per mese
+visitatori_mean = df.groupby('Mese')['Visitatori'].mean()
+visitatori_mean
+
