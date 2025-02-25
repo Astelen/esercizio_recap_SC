@@ -64,3 +64,15 @@ visitatori_std
 
 #Conteggio di tutti i valori per visualizzare valore piu' frequente, valore meno frequente
 df['Patologia'].value_counts()
+
+#Grafico visitatori medi nel tempo
+import matplotlib as plt
+import plotly.express as px
+fig = px.line(df, x='Data', y='Visitatori', title='Numero di visitatori nel tempo')
+# Mostra il grafico
+fig.show()
+
+#Grafico Plotly su media mensile
+fig = px.line(x = visitatori_mean.index, y=visitatori_mean.values, title='Media visitatori per mese')
+# Mostra il grafico
+fig.show()
