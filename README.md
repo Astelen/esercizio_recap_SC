@@ -1,2 +1,2 @@
 # esercizio_recap_SC
-esercizio_recap
+Esercizio di recap con NumPy e Pandas per la visualizzazione dei dati.
